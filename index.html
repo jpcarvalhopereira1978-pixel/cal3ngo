@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cal3ngo | Editor & Motion Designer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #2b0030, #050005, #000000);
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(160, 60, 255, 0.12),
+                transparent
+            );
+            animation: glow 8s infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes glow {
+            from { opacity: 0.3; }
+            to { opacity: 0.8; }
+        }
+
+        /* HEADER MAIS COMPACTO */
+        header {
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        /* OC / LOGO MAIOR */
+        .logo {
+            width: 260px; /* aumentei bastante */
+            margin: 0 auto 20px;
+            filter: drop-shadow(0 0 45px rgba(160, 60, 255, 0.65));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0); }
+        }
+
+        header h1 {
+            font-size: 3.4rem;
+            letter-spacing: 4px;
+            margin-top: 5px;
+            background: linear-gradient(90deg, #ff1a1a, #c300ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.15rem;
+            color: #d1d1d1;
+        }
+
+        nav {
+            margin-top: 25px; /* nav mais pra cima */
+        }
+
+        nav a {
+            color: #f5f5f5;
+            margin: 0 18px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff1a1a, #c300ff);
+            transition: 0.4s;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 20px;
+        }
+
+        h2 {
+            font-size: 2.3rem;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #ff1a1a, #c300ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sobre p {
+            max-width: 850px;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: linear-gradient(160deg, #0b0010, #120000);
+            padding: 35px;
+            border-radius: 18px;
+            border: 1px solid rgba(160, 60, 255, 0.2);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 0 40px rgba(160, 60, 255, 0.35);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #c77dff;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #d4d4d4;
+        }
+
+        .contato a {
+            display: inline-block;
+            margin: 15px 25px 0 0;
+            color: #c300ff;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #000000;
+            color: #999999;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="oc.png" alt="OC Cal3ngo" class="logo">
+
+    <h1>CAL3NGO</h1>
+    <p>Editor de Vídeo • Motion Designer • Visual Cinematográfico</p>
+
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Trabalhos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section id="sobre" class="sobre">
+    <h2>Quem sou eu</h2>
+    <p>
+        Sou <strong>Cal3ngo</strong>, editor de vídeo e motion designer focado em
+        criar experiências visuais impactantes, com identidade forte,
+        animações modernas e ritmo cinematográfico.
+    </p>
+</section>
+
+<section id="projetos">
+    <h2>Trabalhos & Motion</h2>
+
+    <div class="projetos">
+        <div class="card">
+            <h3>Edição Cinematográfica</h3>
+            <p>Vídeos com estética forte, ritmo preciso e storytelling visual.</p>
+        </div>
+
+        <div class="card">
+            <h3>Motion Graphics</h3>
+            <p>Animações, textos em movimento e efeitos visuais modernos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Conteúdo para Redes</h3>
+            <p>Reels, shorts e vídeos dinâmicos focados em engajamento.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="contato">
+    <h2>Contato</h2>
+    <p>Bora criar algo fora da curva?</p>
+    <br>
+    <a href="#">Instagram</a>
+    <a href="#">Behance</a>
+    <a href="#">YouTube</a>
+</section>
+
+<footer>
+    <p>© 2026 • Portfólio de Cal3ngo</p>
+</footer>
+
+</body>
+</html>
